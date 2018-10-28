@@ -1,4 +1,3 @@
-
 import numpy as np
 import fastStructure 
 import parse_bed
@@ -6,7 +5,6 @@ import parse_str
 import random
 import getopt
 import sys
-import pdb
 import warnings
 
 # ignore warnings with these expressions

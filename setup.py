@@ -4,6 +4,7 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import numpy
 import sys
+import glob
 
 # setup bed parser
 ext_modules = [Extension("parse_bed", ["parse_bed.pyx"])]
@@ -32,5 +33,9 @@ setup(
     name = 'fastStructure',
     cmdclass = {'build_ext': build_ext},
     include_dirs=[numpy.get_include(), '.', 'vars/'],
+    scripts = glob.glob('scripts/*.py'),
     ext_modules = ext_modules
 )
+
+
+
