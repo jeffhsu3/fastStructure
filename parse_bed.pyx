@@ -1,4 +1,3 @@
-
 import numpy as np
 cimport numpy as np
 import struct
@@ -8,15 +7,17 @@ import sys
 # missing values are coded by `3`.
 cdef dict genomap = dict([('00',0),('01',1),('11',2),('10',3)])
 
+
 def load(file):
 
     cdef int n, l, i, Nindiv, Nsnp, Nbytes
-    cdef str line, checkA, checkB, checkC, bytestr
+    cdef bytes line 
+    cdef str checkA, CheckB, checkC, bytestr
     cdef np.ndarray genotype
 
     # number of individuals
     handle = open(file+'.fam','r')
-    for i,line in enumerate(handle):
+    for i, _ in enumerate(handle):
         pass
     Nindiv = i+1
 
@@ -24,9 +25,8 @@ def load(file):
     Nbytes = Nindiv/4+(Nindiv%4>0)*1
 
     # number of SNPs
-    handle = open(file+'.bim','r')
-    for i,line in enumerate(handle):
-        pass
+    with open(file + '.bim', 'r') as handle:
+        for i, _ in enumerate(handle): pass
     Nsnp = i+1
 
     tobit = lambda x: ''.join([bin(i)[2:].zfill(8)[::-1] for i in struct.unpack('<%sB'%Nbytes, x)])
@@ -41,7 +41,7 @@ def load(file):
     line = handle.read(1)
     checkB = bin(struct.unpack('<B', line)[0])[2:].zfill(8)[::-1]
     line = handle.read(1)
-    checkC = bin(struct.unpack('<B', line)[0])[2:].zfill(8)[::-1]
+    #checkC = bin(struct.unpack('<B', line)[0])[2:].zfill(8)[::-1]
 
     if checkA!="00110110" or checkB!="11011000":
         print "This is not a valid bed file"
