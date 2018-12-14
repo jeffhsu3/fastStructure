@@ -1,7 +1,7 @@
 import numpy as np
 cimport numpy as np
-cimport allelefreq as af
-cimport admixprop as ap
+cimport faststructure.vars.allelefreq as af
+cimport faststructure.vars.admixprop as ap
 from scipy.special import digamma, gammaln, polygamma
 import utils
 

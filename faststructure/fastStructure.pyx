@@ -2,12 +2,12 @@
 import numpy as np
 cimport numpy as np
 from cpython cimport bool
-import vars.utils as utils
-cimport vars.allelefreq as af 
-import vars.allelefreq as af
-cimport vars.admixprop as ap 
-import vars.admixprop as ap
-import vars.marglikehood as mlhood
+import faststructure.vars.utils as utils
+cimport faststructure.vars.allelefreq as af 
+import faststructure.vars.allelefreq as af
+cimport faststructure.vars.admixprop as ap 
+import faststructure.vars.admixprop as ap
+import faststructure.vars.marglikehood as mlhood
 import time
 
 def infer_variational_parameters(np.ndarray[np.uint8_t, ndim=2] G, int K, str outfile, double mintol, str prior, int cv):

@@ -3,5 +3,11 @@ build
 # python bytecode
 *.pyc
 
+faststructure/*.c
+faststructure/vars/admixprop.c
+faststructure/vars/utils.c
+faststructure/vars/allelefreq.c
+faststructure/vars/marglikehood.c
+
 # C object files and shared libraries
 *.so

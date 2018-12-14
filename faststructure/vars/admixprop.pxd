@@ -1,6 +1,7 @@
+# cython: language_level = 3
 import numpy as np
 cimport numpy as np
-cimport allelefreq as af
+cimport faststructure.vars.allelefreq as af
 
 cdef class AdmixProp:
 

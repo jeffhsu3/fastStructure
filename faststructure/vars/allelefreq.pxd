@@ -1,7 +1,7 @@
 
 import numpy as np
 cimport numpy as np
-cimport admixprop as ap
+cimport faststructure.vars.admixprop as ap
 from cpython cimport bool
 
 cdef class AlleleFreq:

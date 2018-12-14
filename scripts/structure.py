@@ -1,5 +1,5 @@
 import numpy as np
-import fastStructure 
+import faststructure.fastStructure  as fastStructure
 import parse_bed
 import parse_str
 import random
